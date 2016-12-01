@@ -163,7 +163,7 @@ public class DataFetcherUtils {
 	
 
 	public static InputStream StringTOInputStream(String str) throws Exception {
-		ByteArrayInputStream is = new ByteArrayInputStream(str.getBytes("gbk"));
+		ByteArrayInputStream is = new ByteArrayInputStream(str.getBytes("utf-8"));
 		return is;
 	}
 
@@ -266,7 +266,7 @@ public class DataFetcherUtils {
 			int i = -1;
 			while ((i = is.read(buffer)) > 0) {
 
-				sb.append(new String(buffer, 0, i));
+				sb.append(new String(buffer, 0, i,"utf-8"));
 			}
 			System.err.println(sb.toString());
 		} catch (MalformedURLException e) {
