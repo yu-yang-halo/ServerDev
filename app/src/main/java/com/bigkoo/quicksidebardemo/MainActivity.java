@@ -103,13 +103,16 @@ public class MainActivity extends AppCompatActivity implements OnQuickSideBarTou
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                String resutlString="";
+
 
                 Log.v("TAG","list view "+position+" | "+carypeAdapter.getCarBrandOBJs().get(position).getCarCategoryName());
-                carInfoDescription+=" "+carypeAdapter.getCarBrandOBJs().get(position).getCarCategoryName();
+
+                resutlString=carInfoDescription+" "+carypeAdapter.getCarBrandOBJs().get(position).getCarCategoryName();
 
 
-                Toast.makeText(MainActivity.this,carInfoDescription,Toast.LENGTH_LONG).show();
-                getIntent().putExtra(KEY_RESULT,carInfoDescription);
+                Toast.makeText(MainActivity.this,resutlString,Toast.LENGTH_LONG).show();
+                getIntent().putExtra(KEY_RESULT,resutlString);
                 setResult(RESULT_CODE,getIntent());
 
 
